@@ -1,0 +1,20 @@
+.navbar {
+    background-color: #f8f9fa;
+  }
+  
+  .navbar-brand img {
+    height: 30px;
+  }
+  .navbar-nav {
+    margin-left: auto; 
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem; /* Adjust padding for nav links */
+    color: #495057; /* Link color */
+    font-weight: bold; /* Make links bold */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #007bff; /* Link hover color */
+  }
