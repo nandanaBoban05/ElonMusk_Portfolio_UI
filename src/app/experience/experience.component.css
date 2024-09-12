@@ -1,0 +1,74 @@
+/* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #eee7e7;
+}
+
+/* Experience section styling */
+.experience {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0.5rem 2rem rgba(5, 164, 226, 0.15);
+    padding: 20px;
+}
+
+/* Header styling */
+.experience h1 {
+    color: #003366; /* Dark blue color */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Job entry styling */
+.job {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.job:last-child {
+    border-bottom: none;
+}
+
+.job h2 {
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.company {
+    color: #555;
+    font-style: italic;
+}
+
+.date {
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-top: 10px;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+}
