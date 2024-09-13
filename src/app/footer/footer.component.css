@@ -1,0 +1,34 @@
+/* Footer Styling */
+.footer {
+    background-color: #00bfff; /* Light blue background */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    font-size: 16px;
+}
+
+.white-text {
+    color: white; /* White colored text */
+}
+
+.highlighted-text {
+    color: black; /* Black colored text for the highlighted part */
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: white; /* White icons */
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: black; /* Change color to black on hover */
+}
