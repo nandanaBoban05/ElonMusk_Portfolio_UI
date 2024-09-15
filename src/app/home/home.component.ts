@@ -6,7 +6,6 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from "../footer/footer.component";
 import { EducationComponent } from "../education/education.component";
 import { ExtracurricularComponent } from '../extracurricular/extracurricular.component';
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -14,6 +13,5 @@ import { ExtracurricularComponent } from '../extracurricular/extracurricular.com
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
-
+export class HomeComponent  {
 }
