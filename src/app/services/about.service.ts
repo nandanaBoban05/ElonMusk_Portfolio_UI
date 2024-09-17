@@ -7,7 +7,7 @@ import { HttpClient} from '@angular/common/http';
 export class AboutService {
   constructor(private http: HttpClient) {}
 
-  getAboutDetails(userobj:any) {
+  saveAboutDetails(userobj:any) {
     return this.http.get('',userobj);
   }
 

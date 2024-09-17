@@ -16,6 +16,8 @@ export class AboutComponent  {
 
   constructor(private authService: AuthService, private aboutServices: AboutService) {}
   onSave(){
+    this.aboutServices.saveAboutDetails(this.aboutDetails).subscribe((result:any) => {
+    });
 
   }
   onLogout(){

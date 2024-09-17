@@ -25,7 +25,7 @@ router=inject(Router);
     {
       console.log('Login successful',result);
       if(result && result.Message=='Login successful'){
-        this.router.navigateByUrl("/home");
+        this.router.navigateByUrl("/about");
       }
       else{
         alert('Error:'+result.Message);
