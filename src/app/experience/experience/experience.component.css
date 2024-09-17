@@ -8,7 +8,7 @@
 /* Body styling */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.25rem;
     color: #eee7e7;
 }
 
@@ -30,7 +30,7 @@ body {
 
 /* Header styling */
 .experience h1 {
-    color: #003366; /* Dark blue color */
+    color: #000000; /* Dark blue color */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -47,23 +47,23 @@ body {
 }
 
 .job h2 {
-    color: #003366;
+    color: #000000;
     margin-bottom: 5px;
 }
 
 .company {
-    color: #555;
-    font-style: italic;
+    color: #000000;
+    font-style: "bold",sans-serif;
 }
 
 .date {
-    color: #999;
+    color: #0a0a0a;
     margin-bottom: 10px;
 }
 
 .description {
     margin-top: 10px;
-    color: #666;
+    color: #000000;
 }
 
 /* Responsive design */

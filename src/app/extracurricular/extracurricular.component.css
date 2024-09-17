@@ -23,8 +23,8 @@ article {
   /* basic article elements styling */
   article h2 {
     margin: 0 0 18px 0;
-    font-family: "Bebas Neue", cursive;
-    font-size: 1.9rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.25rem;
     letter-spacing: 0.06em;
     color: var(--title-color);
     transition: color 0.3s ease-out;
@@ -93,7 +93,7 @@ article {
     margin: 0;
     padding: 48px 0;
     font-family: "Figtree", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.6rem;
     background-image: linear-gradient(45deg, #7c9885, #b5b682);
     min-height: 100vh;
