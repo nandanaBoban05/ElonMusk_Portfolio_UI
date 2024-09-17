@@ -1,0 +1,18 @@
+<h1 align="center">Projects</h1>
+<div class="main">
+  <ul class="cards">
+    <li *ngFor="let project of projects" class="cards_item">
+      <div class="card">
+        <div class="card_image">
+          <img [src]="project.imageUrl" alt="Project image" />
+        </div>
+        <div class="card_content">
+          <h2 class="card_title">{{ project.title }}</h2>
+          <div class="card_text">
+            <p>{{ project.description }}</p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

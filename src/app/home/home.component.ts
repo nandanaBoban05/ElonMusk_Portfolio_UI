@@ -8,12 +8,13 @@ import { EducationComponent } from "../education/education.component";
 import { ExtracurricularComponent } from '../extracurricular/extracurricular.component';
 import { AboutComponent } from '../about/about.component';
 import { LoginComponent } from "../login/login.component";
+import { ProjectComponent } from '../project/project.component';
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [SkillComponent, ExperienceComponent, ContactComponent,
     NavbarComponent, FooterComponent, EducationComponent,
-    ExtracurricularComponent, AboutComponent, LoginComponent],
+    ExtracurricularComponent, AboutComponent, LoginComponent,ProjectComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

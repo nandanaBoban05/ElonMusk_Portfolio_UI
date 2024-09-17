@@ -24,14 +24,20 @@ export class AboutComponent implements OnInit{
   router =inject(Router); 
   
   ngOnInit() {
-    if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/update']);
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate(['/login']);
+    } else {
+      this.aboutService.getAboutDetails().subscribe((details: any) => {
+        this.aboutDetails = details;
+      });
     }
   }
+  
 
   onSave(){
     this.aboutService.updateAboutDetails(this.aboutDetails).subscribe((result:any) => {
       console.log('Details updated:',result);
+      alert("successful");
     });
 
   }
