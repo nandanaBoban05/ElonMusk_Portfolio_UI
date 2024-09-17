@@ -1,26 +1,43 @@
-import { Component } from '@angular/core';
+import { Component,inject, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { AboutService } from '../services/about.service';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   standalone:true,
-  imports: [],
+  imports: [NgIf,FormsModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-export class AboutComponent  {
+export class AboutComponent implements OnInit{
   aboutDetails: any = {
-    
+    Occupation:'',
+    Email:'',
+    Phone:''
   };
 
-  constructor(private authService: AuthService, private aboutServices: AboutService) {}
+  aboutService = inject(AboutService);
+  authService=inject(AuthService)
+  router =inject(Router); 
+  
+  ngOnInit() {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/update']);
+    }
+  }
+
   onSave(){
-    this.aboutServices.saveAboutDetails(this.aboutDetails).subscribe((result:any) => {
+    this.aboutService.updateAboutDetails(this.aboutDetails).subscribe((result:any) => {
+      console.log('Details updated:',result);
     });
 
   }
   onLogout(){
+    this.authService.logout();
+    this.router.navigate(['/login'])
 
   }
 

@@ -5,13 +5,16 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class AboutService {
+isAuthenticated() {
+throw new Error('Method not implemented.');
+}
   constructor(private http: HttpClient) {}
 
-  saveAboutDetails(userobj:any) {
-    return this.http.get('',userobj);
+  getAboutDetails() {
+    return this.http.get('https://localhost:7170/api/About');
   }
 
   updateAboutDetails(aboutDetails: any){
-    return this.http.put('',aboutDetails);
+    return this.http.put('https://localhost:7170/api/About/1',aboutDetails);
   }
 }
