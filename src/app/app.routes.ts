@@ -7,16 +7,17 @@ import { EducationComponent } from './education/education.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { ProjectComponent } from './project/project.component';
+import { ExtracurricularComponent } from './extracurricular/extracurricular.component';
+import { HomeComponent } from './home/home.component';
 export const routes: Routes = [
-    {path:'home',component:ContactComponent},
+    {path:'home',component:HomeComponent},
     {path:'about',component:AboutComponent},
     { path: 'login', component: LoginComponent },
-    { path: 'update', component: AboutComponent,}, 
     {path:'contact',component:ContactComponent},
     {path:'experience',component:ExperienceComponent},
     {path:'skill',component:SkillComponent},
     {path:'education',component:EducationComponent},
-    {path:'extracurricular',component:AboutComponent},
+    {path:'extracurricular',component:ExtracurricularComponent},
     {path:'project',component:ProjectComponent},
     { path: '', redirectTo: '/home', pathMatch: 'full' },
 

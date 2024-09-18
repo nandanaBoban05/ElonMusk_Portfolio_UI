@@ -13,8 +13,8 @@
     padding: 0.5rem 1rem; 
     color: #495057; 
     font-weight: bold; 
-  }
+  } 
   
   .navbar-nav .nav-link:hover {
-    color: #007bff; /* Link hover color */
+    color: #007bff; /* Link hover color*/
   }
