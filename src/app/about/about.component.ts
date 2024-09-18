@@ -24,9 +24,9 @@ export class AboutComponent{
   router =inject(Router); 
   
   onEdit(){
-    this.aboutService.getAboutDetails(this.aboutDetails).subscribe((result:any)=>{
-       this.aboutDetails=result;
-    });
+    // this.aboutService.getAboutDetails(this.aboutDetails).subscribe((result:any)=>{
+    //    this.aboutDetails=result;
+    // });
     this.router.navigate(['/login'])
 
   }
