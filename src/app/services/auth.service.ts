@@ -10,9 +10,6 @@ export class AuthService {
     return this.http.post('https://localhost:7170/api/Login/Login',adminobj)
   }
   
-  isAuthenticated():boolean{
-    return !!localStorage.getItem('token')
-  }
   logout(){
     localStorage.removeItem('token')
   }

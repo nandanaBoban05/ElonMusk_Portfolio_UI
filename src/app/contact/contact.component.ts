@@ -1,5 +1,4 @@
 import { Component,inject } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ContactService } from '../services/contact.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

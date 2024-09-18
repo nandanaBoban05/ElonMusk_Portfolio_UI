@@ -1,6 +1,4 @@
-<h1 align="center">About</h1>
 <div class="container about-section">
-  <div *ngIf="!authService.isAuthenticated(); else redirectToUpdate">
     <div class="row">
       <div class="col-md-4 text-center">
         <img src="/Elon_About.jpg" alt="Elon Musk" class="profile-image" />
@@ -21,28 +19,14 @@
           <p><strong>Occupation:</strong> {{ aboutDetails.Occupation }}</p>
           <p><strong>Email:</strong> {{ aboutDetails.Email }}</p>
           <p><strong>Phone:</strong> {{ aboutDetails.Phone }}</p>
+
+          <button class="btn btn-primary" [routerLink]="['/login']" >Edit</button>
         </div>
       </div>
     </div>
   </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 
-  <ng-template #redirectToUpdate>
-    <h2>Edit Your Details</h2>
-    <form (submit)="onSave()">
-      <div class="form-group">
-        <label for="occupation">Occupation</label>
-        <input type="text" [(ngModel)]="aboutDetails.Occupation" class="form-control" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" [(ngModel)]="aboutDetails.Email" class="form-control" required />
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="tel" [(ngModel)]="aboutDetails.Phone" class="form-control" required />
-      </div>
-      <button type="submit" class="btn btn-primary">Save</button>
-    </form>
-    <button (click)="onLogout()" class="btn btn-secondary">Logout</button>
-  </ng-template>
-</div>
+

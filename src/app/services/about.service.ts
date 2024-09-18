@@ -17,4 +17,8 @@ throw new Error('Method not implemented.');
   updateAboutDetails(aboutDetails: any){
     return this.http.put('https://localhost:7170/api/About/1',aboutDetails);
   }
+  
+  logout(){
+    localStorage.removeItem('token')
+  }
 }

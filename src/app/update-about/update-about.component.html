@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h2>Edit Your Details</h2>
+  <form (ngSubmit)="onSave()">
+      <div class="form-group">
+          <label for="occupation">Occupation</label>
+          <input type="text" id="occupation" class="form-control" [(ngModel)]="updateDetail.Occupation" name="occupation" required />
+      </div>
+      <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" [(ngModel)]="updateDetail.Email" name="email" required />
+      </div>
+      <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" class="form-control" [(ngModel)]="updateDetail.Phone" name="phone" required />
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+  <button (click)="onLogout()" class="btn btn-secondary mt-2">Logout</button>
+</div>

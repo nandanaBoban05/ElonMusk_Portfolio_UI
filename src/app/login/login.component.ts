@@ -24,11 +24,11 @@ router=inject(Router);
     this.authService.onLoginSubmit(this.adminobj).subscribe((result:any) =>
     {
       console.log('Login successful',result);
-      if(result && result.Message=='Login successful'){
-        this.router.navigateByUrl("/update");
+      if(result && result.message=='Login successful'){
+        this.router.navigateByUrl("/update-about");
       }
       else{
-        alert('Error:'+result.Message);
+        alert('Error:'+result.message);
       }
     },
     (error:any) =>
