@@ -1,4 +1,4 @@
-import { Component,inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AboutService } from '../services/about.service';
 import { AuthService } from '../services/auth.service';
@@ -11,29 +11,45 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './update-about.component.html',
   styleUrl: './update-about.component.css'
 })
-export class UpdateAboutComponent {
+export class UpdateAboutComponent implements OnInit {
 
   updateDetail: any = {
-    Occupation:'',
-    Email:'',
-    Phone:'',
-  }
+    occupation: '',
+    email: '',
+    phone: '',
+  };
  
   aboutService = inject(AboutService);
-  authService=inject(AuthService)
+  authService = inject(AuthService);
   router = inject(Router);
 
-  onSave(){
-    this.aboutService.updateAboutDetails(this.updateDetail).subscribe((result:any) => {
-      console.log('Details updated:',result);
-      alert("successful");
+  ngOnInit() {
+    this.loadAboutDetails();
+  }
+
+  loadAboutDetails() {
+    this.aboutService.getAboutDetails().subscribe((result: any) => {
+      console.log('Loaded details:', result);
+      if (result.length > 0) {
+        this.updateDetail = result[0];  // Assuming the API response is an array
+      }
+    }, error => {
+      console.error('Error fetching details', error);
     });
-
   }
-  onLogout(){
+
+  // Save the updated details
+  onSave() {
+    this.aboutService.updateAboutDetails(this.updateDetail).subscribe((result: any) => {
+      console.log('Details updated:', result);
+      alert('Details updated successfully');
+      this.router.navigate(['/about']);  // Navigate to the about page after successful save
+    });
+  }
+
+  // Logout and navigate to the about page
+  onLogout() {
     this.authService.logout();
-    this.router.navigate(['/about'])
-
+    this.router.navigate(['/about']);
   }
-
 }

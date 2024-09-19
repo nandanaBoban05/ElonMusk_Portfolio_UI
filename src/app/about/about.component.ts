@@ -1,4 +1,4 @@
-import { Component,inject } from '@angular/core';
+import { Component,inject,OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { AboutService } from '../services/about.service';
 import { Router, RouterLink } from '@angular/router';
@@ -15,20 +15,32 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AboutComponent{
   aboutDetails: any = {
-    Occupation:'',
-    Email:'',
-    Phone:''
+    occupation:'',
+    email:'',
+    phone:''
   };
   aboutService = inject(AboutService);
   authService=inject(AuthService)
   router =inject(Router); 
-  
-  onEdit(){
-    // this.aboutService.getAboutDetails(this.aboutDetails).subscribe((result:any)=>{
-    //    this.aboutDetails=result;
-    // });
-    this.router.navigate(['/login'])
-
+  ngOnInit() {
+    this.loadAboutDetails();
   }
 
+  loadAboutDetails() {
+    this.aboutService.getAboutDetails().subscribe((result: any) => {
+      console.log('API response:', result); // Check the actual response
+      if (result.length > 0) {
+        this.aboutDetails = result[0]; // Assign the first object from the array
+      }
+    }, error => {
+      console.error('Error fetching about details', error);
+    });
+  }
+  
+  
+
+  // Optionally, if you want to navigate to login on a specific event:
+  onEdit() {
+    this.router.navigate(['/login']);
+  }
 }
