@@ -43,7 +43,6 @@ export class UpdateAboutComponent implements OnInit {
     this.aboutService.updateAboutDetails(this.updateDetail).subscribe((result: any) => {
       console.log('Details updated:', result);
       alert('Details updated successfully');
-      this.router.navigate(['/about']);  // Navigate to the about page after successful save
     });
   }
 

@@ -28,19 +28,16 @@ export class AboutComponent{
 
   loadAboutDetails() {
     this.aboutService.getAboutDetails().subscribe((result: any) => {
-      console.log('API response:', result); // Check the actual response
+      console.log('API response:', result); 
       if (result.length > 0) {
-        this.aboutDetails = result[0]; // Assign the first object from the array
+        this.aboutDetails = result[0];
       }
     }, error => {
       console.error('Error fetching about details', error);
     });
   }
   
-  
-
-  // Optionally, if you want to navigate to login on a specific event:
-  onEdit() {
+    onEdit() {
     this.router.navigate(['/login']);
   }
 }
